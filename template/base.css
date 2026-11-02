@@ -1,0 +1,41 @@
+/* 카드뉴스 공통 구조 — 색·폰트·모양은 themes/*.css 가 바꾼다 */
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#f3f6fa;--ink:#1c2738;--sub:#3b4a5c;--mute:#8a97a8;--accent:#2563eb;--accent-ink:#fff;--soft:#e7efff;
+--card:#fff;--card-border:none;--shadow:0 4px 18px rgba(28,39,56,.06);--radius:22px;
+--x-bg:#ffe9e9;--x:#e04848;--v-bg:#e3f6ea;--v:#16a34a;
+--cta-bg:#1c2738;--cta-ink:#fff;--cta-sub:#c9d6e3;--cta-accent:#7cc4f5;--cta-btn:#2563eb;
+--head:'Noto Sans CJK KR',sans-serif;--body:'Noto Sans CJK KR',sans-serif;--logo:none;--cta-logo:brightness(0) invert(1)}
+body{font-family:var(--body);background:#888}
+.s{width:1080px;height:1350px;position:relative;overflow:hidden;background:var(--bg);color:var(--ink);padding:110px 96px 0;display:flex;flex-direction:column}
+.s .grid{position:absolute;inset:0;pointer-events:none}
+.tag{align-self:flex-start;background:var(--accent);color:var(--accent-ink);font-weight:700;font-size:30px;padding:10px 22px;border-radius:10px;position:relative}
+.no{font-size:30px;font-weight:700;color:var(--accent);margin-top:8px;position:relative}
+h1,h2{font-family:var(--head);position:relative;font-weight:800}
+h1{font-size:92px;line-height:1.25;letter-spacing:-2px;margin-top:44px}
+h2{font-size:64px;line-height:1.3;letter-spacing:-1.2px;margin-top:28px}
+.b{color:var(--accent)}
+p.lead{font-size:38px;line-height:1.6;color:var(--sub);margin-top:36px;position:relative}
+.list{margin-top:48px;display:grid;gap:22px;position:relative}
+.item{background:var(--card);border:var(--card-border);border-radius:var(--radius);padding:30px 36px;font-size:36px;line-height:1.45;font-weight:500;display:flex;gap:22px;align-items:flex-start;box-shadow:var(--shadow)}
+.item i{font-style:normal;flex:0 0 52px;height:52px;border-radius:50%;background:var(--soft);color:var(--accent);font-weight:800;font-size:30px;display:flex;align-items:center;justify-content:center;margin-top:2px}
+.item.x i{background:var(--x-bg);color:var(--x)}
+.item.v i{background:var(--v-bg);color:var(--v)}
+.big{margin-top:56px;background:var(--card);border:var(--card-border);border-radius:calc(var(--radius) + 6px);padding:48px 52px;position:relative;box-shadow:var(--shadow)}
+.big .num{font-family:var(--head);font-size:120px;font-weight:800;color:var(--accent);line-height:1.05}
+.big .cap{font-size:38px;margin-top:20px;line-height:1.5;color:var(--sub)}
+.two{display:grid;gap:28px;margin-top:48px;position:relative}
+.chips{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:56px;position:relative}
+.chips div{background:var(--card);border:var(--card-border);border-radius:20px;padding:26px 28px;font-size:34px;font-weight:700;display:flex;gap:16px;align-items:center;box-shadow:var(--shadow)}
+.chips div span{color:var(--accent);font-size:30px}
+.foot{position:absolute;left:96px;right:96px;bottom:70px;display:flex;justify-content:space-between;align-items:center;font-size:26px;color:var(--mute)}
+.foot img{height:54px;filter:var(--logo)}
+.page{font-weight:700;color:var(--accent)}
+.cta{background:var(--cta-bg);color:var(--cta-ink)}
+.cta h2 .b,.cta .hl{color:var(--cta-accent)}
+.cta p.lead{color:var(--cta-sub)}
+.cta .foot img{filter:var(--cta-logo)}
+.cta .page{color:var(--cta-accent)}
+.btn{margin-top:60px;align-self:flex-start;background:var(--cta-btn);color:#fff;font-size:40px;font-weight:700;padding:26px 40px;border-radius:18px;position:relative}
+.contact{margin-top:40px;font-size:36px;line-height:1.7;color:var(--cta-sub);position:relative}
+.contact b{color:var(--cta-ink)}
+.note{font-size:26px;margin-top:auto;margin-bottom:150px;color:var(--cta-sub);opacity:.8;position:relative;line-height:1.5}

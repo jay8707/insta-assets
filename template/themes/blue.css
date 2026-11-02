@@ -1,0 +1,3 @@
+/* blue — 밝은 회청색 + 파란 포인트, 모눈 배경 (기본) */
+.s .grid{background-image:linear-gradient(rgba(37,128,214,.06) 1px,transparent 1px),linear-gradient(90deg,rgba(37,128,214,.06) 1px,transparent 1px);background-size:54px 54px;-webkit-mask-image:radial-gradient(ellipse 80% 60% at 70% 20%,#000,transparent)}
+.cta .grid{background-image:linear-gradient(rgba(124,196,245,.07) 1px,transparent 1px),linear-gradient(90deg,rgba(124,196,245,.07) 1px,transparent 1px)}

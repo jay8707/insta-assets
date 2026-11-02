@@ -1,0 +1,12 @@
+/* paper — 크림색 종이 + 주황, 명조 제목, 얇은 테두리 */
+:root{--bg:#f7f1e7;--ink:#2a2018;--sub:#5c4d3f;--mute:#9a8a78;--accent:#e8590c;--accent-ink:#fff;--soft:#fde6d6;
+--card:#fffdf9;--card-border:2px solid #e9dccb;--shadow:none;--radius:8px;--x-bg:#fde2e2;--x:#c92a2a;--v-bg:#e6f4ea;--v:#2b8a3e;
+--cta-bg:#2a2018;--cta-sub:#d9cbb8;--cta-accent:#ff922b;--cta-btn:#e8590c;--head:'Noto Serif CJK KR','Noto Serif CJK SC',serif}
+h1,h2{font-weight:900;letter-spacing:-1px}
+.tag{border-radius:4px;background:transparent;color:var(--accent);border:3px solid var(--accent)}
+.no{font-family:var(--head);font-size:34px}
+.item i{border-radius:4px;font-family:var(--head)}
+.cover{padding-top:150px}
+.cover .grid{background:linear-gradient(var(--accent),var(--accent)) 96px 96px/140px 10px no-repeat}
+.cover::after{content:'';position:absolute;right:-120px;bottom:180px;width:520px;height:520px;border-radius:50%;background:#f4dcc2;z-index:0}
+.cover h1,.cover p,.cover .tag{z-index:1}

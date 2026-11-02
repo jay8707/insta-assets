@@ -1,0 +1,14 @@
+/* mint — 표지는 진초록 꽉 채움, 본문은 연민트 + 알약형 카드 */
+:root{--bg:#effaf5;--ink:#0b2e26;--sub:#2f5a50;--mute:#6b8f86;--accent:#0f766e;--accent-ink:#fff;--soft:#ccf2e3;
+--card:#fff;--shadow:0 6px 0 #c7eadc;--radius:999px;--x-bg:#ffe3e3;--x:#e03131;--v-bg:#d3f9d8;--v:#2f9e44;
+--cta-bg:#0f766e;--cta-sub:#c3f0e0;--cta-accent:#b2f2bb;--cta-btn:#0b2e26}
+.item{padding:26px 40px;align-items:center}
+.item i{margin-top:0}
+.big{border-radius:40px}
+.cover{background:#0f766e;color:#fff}
+.cover .b{color:#b2f2bb}
+.cover p.lead{color:#c3f0e0}
+.cover .tag{background:#fff;color:#0f766e;border-radius:999px}
+.cover .foot img{filter:brightness(0) invert(1)}
+.cover .page{color:#b2f2bb}
+.cover .grid{background:radial-gradient(circle at 100% 0%,rgba(255,255,255,.14) 0 260px,transparent 261px),radial-gradient(circle at 0% 100%,rgba(255,255,255,.08) 0 340px,transparent 341px)}

@@ -1,0 +1,10 @@
+/* night — 짙은 남색 배경 + 시안 네온, 카드는 왼쪽 선 강조 */
+:root{--bg:#0b1220;--ink:#f1f5f9;--sub:#a5b4c8;--mute:#64748b;--accent:#22d3ee;--accent-ink:#04131a;--soft:rgba(34,211,238,.14);
+--card:#131d31;--card-border:1px solid #22304a;--shadow:none;--radius:14px;--x-bg:rgba(248,113,113,.15);--x:#f87171;--v-bg:rgba(52,211,153,.15);--v:#34d399;
+--cta-bg:linear-gradient(160deg,#0e7490,#0b1220 70%);--cta-accent:#67e8f9;--cta-btn:#06b6d4;--logo:brightness(0) invert(1)}
+.s .grid{background:radial-gradient(circle at 85% 8%,rgba(34,211,238,.22),transparent 38%),radial-gradient(circle at 0% 100%,rgba(99,102,241,.18),transparent 40%)}
+.item{border-left:6px solid var(--accent)}
+.item i{border-radius:10px}
+.tag{border-radius:999px;padding:10px 26px}
+.cover h1{font-size:100px}
+.cover .grid{background:radial-gradient(circle at 80% 30%,rgba(34,211,238,.35),transparent 30%),radial-gradient(circle at 80% 30%,rgba(34,211,238,.08),transparent 55%)}
