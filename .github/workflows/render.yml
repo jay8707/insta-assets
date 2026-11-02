@@ -1,0 +1,62 @@
+name: 카드뉴스 렌더
+
+on:
+  push:
+    branches: [main]
+    paths: ['posts/**/cards.html']
+  workflow_dispatch:
+    inputs:
+      post:
+        description: '다시 렌더할 글 ID (posts/<ID>)'
+        required: true
+
+permissions:
+  contents: write
+
+concurrency:
+  group: render
+  cancel-in-progress: false
+
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+      - name: 렌더할 글 찾기
+        id: find
+        run: |
+          if [ -n "${{ github.event.inputs.post }}" ]; then
+            echo "dirs=posts/${{ github.event.inputs.post }}" >> "$GITHUB_OUTPUT"
+          else
+            dirs=$(git diff --name-only HEAD~1 HEAD -- 'posts/**/cards.html' | xargs -r -n1 dirname | sort -u | tr '\n' ' ')
+            echo "dirs=$dirs" >> "$GITHUB_OUTPUT"
+          fi
+      - uses: actions/setup-python@v5
+        if: steps.find.outputs.dirs != ''
+        with:
+          python-version: '3.12'
+      - name: 렌더 도구 설치
+        if: steps.find.outputs.dirs != ''
+        run: |
+          sudo apt-get update -qq && sudo apt-get install -y -qq fonts-noto-cjk fonts-noto-color-emoji
+          pip install -q playwright pillow
+          python -m playwright install --with-deps chromium
+      - name: 렌더
+        if: steps.find.outputs.dirs != ''
+        run: |
+          for d in ${{ steps.find.outputs.dirs }}; do
+            rm -f "$d"/[0-9][0-9].jpg
+            python template/render.py "$d/cards.html" "$d"
+          done
+      - name: 커밋
+        if: steps.find.outputs.dirs != ''
+        run: |
+          git config user.name "card-render-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add posts
+          git diff --cached --quiet && exit 0
+          git commit -m "카드뉴스 이미지 렌더: ${{ steps.find.outputs.dirs }}"
+          git pull --rebase -q origin main
+          git push origin main
